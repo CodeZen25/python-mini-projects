@@ -1,17 +1,21 @@
 import random
 
-
+counter = 0
 
 while True:
-  choice = input("Roll the dice? (y/n):").lower()
-  if choice == 'y':
-    dice1 = random.randint(1,6)
-    dice2 = random.randint(1,6)
-    print (f'({dice1}, {dice2})')
-    
-  elif choice == 'n':
-    print("Thanks for playing")
-    break
+    choice = input("Roll the dice? (y/n):").lower()
+    if choice == "y":
+        n = int(input("How many dice you want to roll?:"))
 
-  else: 
-     print ("Invalid choice!") 
+        dice_rolls = [random.randint(1, 6) for _ in range(n)]
+        print("You rolled:", dice_rolls)
+        counter += 1
+
+        print(f"You rolled the dice {counter} times.")
+
+    elif choice == "n":
+        print("Thanks for playing")
+        break
+
+    else:
+        print("Invalid choice!")
